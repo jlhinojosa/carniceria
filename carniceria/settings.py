@@ -75,6 +75,9 @@ WSGI_APPLICATION = 'carniceria.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 if 'RDS_HOSTNAME' in os.environ:
+
+    print('Database hostname is ' + os.environ['RDS_DB_NAME'])
+
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
