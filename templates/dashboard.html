@@ -1,0 +1,34 @@
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+
+
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Direccion</th>
+    </tr>
+    {% for venue in venues %}
+    <tr>
+        <td>{{ venue.name }}</td>
+        <td>{{ venue.address }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<a href="{% url 'create_venue' %}">Crear nuevo local</a>
