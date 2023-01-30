@@ -1,0 +1,43 @@
+<!-- templates/registration/login.html -->
+{% extends 'base.html' %}
+
+{% block title %}Detalle Local{% endblock %}
+
+{% block content %}
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+
+
+<p><a href="{{request.META.HTTP_REFERER}}">Go back</a></p>
+
+Nombre: {{ venue.name }} | Direccion: {{ venue.address }}
+
+<a href="{% url 'drawer_create' venue.id %}">Crear nueva caja</a>
+
+<table>
+    <tr>
+        <th>Caja</th>
+    </tr>
+    {% for drawer in venue.drawer_set.all %}
+    <tr>
+        <td>{{ drawer.name }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

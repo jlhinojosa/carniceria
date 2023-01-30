@@ -11,3 +11,12 @@ class VenueForm(forms.ModelForm):
 		model = Venue
 		fields = "__all__"
 		exclude = ['owner']
+
+class DrawerForm(forms.ModelForm):
+	def __init__(self, *args, **kwargs):
+		super(DrawerForm, self).__init__(*args, **kwargs)                       
+		self.fields['venue'].disabled = True
+
+	class Meta:
+		model = Drawer
+		fields = "__all__"
