@@ -14,7 +14,7 @@ def dashboard(request):
 
     return render(request, 'home.html', context)
 
-def create_venue(request):
+def venue_create(request):
 
     context = {}
 
@@ -33,3 +33,25 @@ def create_venue(request):
     else: 
         context['form']= form
         return render(request, "venues/create.html", context)
+
+def venue_details(request, id):
+
+    venue = Venue.objects.get(id=id)
+    context = {
+        'venue': venue,
+    }
+    return render(request, 'venues/details.html', context)
+
+def drawer_create(request, venueId):
+
+    context = {}
+
+    form = DrawerForm(request.POST or None, request.FILES or None, initial={'venue': venueId})
+    if form.is_valid():
+        # save the form data to model
+        instance = form.save()
+
+        return HttpResponseRedirect(reverse('venue_details', kwargs={'id': venueId}))
+    else: 
+        context['form']= form
+        return render(request, "drawers/create.html", context)

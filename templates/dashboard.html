@@ -24,11 +24,11 @@
     </tr>
     {% for venue in venues %}
     <tr>
-        <td>{{ venue.name }}</td>
+        <td><a href="venues/details/{{ venue.id }}">{{ venue.name }}</a></td>
         <td>{{ venue.address }}</td>
     </tr>
     {% endfor %}
 
 </table>
 
-<a href="{% url 'create_venue' %}">Crear nuevo local</a>
+<a href="{% url 'venue_create' %}">Crear nuevo local</a>
