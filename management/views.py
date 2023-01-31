@@ -55,3 +55,23 @@ def drawer_create(request, venueId):
     else: 
         context['form']= form
         return render(request, "drawers/create.html", context)
+
+def drawer_open(request, drawerId):
+
+    drawer = Drawer.objects.get(id=drawerId)
+
+    if(drawer.status != 'Open'):
+        drawer.status = 'Open'
+        drawer.save()
+    
+    return HttpResponseRedirect(reverse('venue_details', kwargs={'id': drawer.venue.id}))
+
+def drawer_close(request, drawerId):
+
+    drawer = Drawer.objects.get(id=drawerId)
+
+    if(drawer.status == 'Open'):
+        drawer.status = 'Closed'
+        drawer.save()
+    
+    return HttpResponseRedirect(reverse('venue_details', kwargs={'id': drawer.venue.id}))

@@ -1,5 +1,6 @@
 <!-- templates/registration/login.html -->
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block title %}Detalle Local{% endblock %}
 
@@ -32,10 +33,14 @@ Nombre: {{ venue.name }} | Direccion: {{ venue.address }}
 <table>
     <tr>
         <th>Caja</th>
+        <th>Estado</th>
+        <th>Acciones</th>
     </tr>
     {% for drawer in venue.drawer_set.all %}
     <tr>
         <td>{{ drawer.name }}</td>
+        <td>{% translate drawer.status %}</td>
+        <td>{% if drawer.status == 'Open' %} <a href="{% url 'drawer_close' drawer.id %}">Cerrar</a> {% else %} <a href="{% url 'drawer_open' drawer.id %}">Abrir</a> {% endif %}</td>
     </tr>
     {% endfor %}
 </table>
