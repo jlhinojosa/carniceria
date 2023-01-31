@@ -6,3 +6,5 @@ class Command(BaseCommand):
         User = get_user_model()
         if not User.objects.filter(username="superu").exists():
             User.objects.create_superuser("admin", "admin@admin.com", "password")
+        if not User.objects.filter(username="jaime").exists():
+            User.objects.create_superuser("jaime", "admin@admin.com", "password")    
