@@ -1,10 +1,11 @@
 <!-- templates/registration/login.html -->
-{% extends 'base.html' %}
+{% extends 'content.html' %}
+
 {% load i18n %}
 
 {% block title %}Detalle Local{% endblock %}
 
-{% block content %}
+{% block child %}
 <style>
     table {
       font-family: arial, sans-serif;
@@ -35,12 +36,16 @@ Nombre: {{ venue.name }} | Direccion: {{ venue.address }}
         <th>Caja</th>
         <th>Estado</th>
         <th>Acciones</th>
+        <th>Ultimo Balance</th>
+        <th>Ultimo Cierre</th>
     </tr>
     {% for drawer in venue.drawer_set.all %}
     <tr>
         <td>{{ drawer.name }}</td>
         <td>{% translate drawer.status %}</td>
         <td>{% if drawer.status == 'Open' %} <a href="{% url 'drawer_close' drawer.id %}">Cerrar</a> {% else %} <a href="{% url 'drawer_open' drawer.id %}">Abrir</a> {% endif %}</td>
+        <td>{{drawer.closingbalance_set.last.totalCashAmount}}</td>
+        <td>{{drawer.closingbalance_set.last.dateTime}}</td>
     </tr>
     {% endfor %}
 </table>
