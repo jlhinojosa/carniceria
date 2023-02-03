@@ -3,8 +3,8 @@ name: Django CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+#  pull_request:
+#    branches: [ "main" ]
 
 env:
   AWS_DEFAULT_REGION: "sa-east-1"
