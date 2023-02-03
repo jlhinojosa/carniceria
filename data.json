@@ -34,5 +34,104 @@
             "groups": [],
             "user_permissions": []
         }
+    },
+    {
+        "model": "management.denomination",
+        "pk": 1,
+        "fields": {
+            "value": "20000",
+            "name": null,
+            "currency": "CLP",
+            "type": "Bill",
+            "displayOrder": 1
+        }
+    },
+    {
+        "model": "management.denomination",
+        "pk": 2,
+        "fields": {
+            "value": "10000",
+            "name": null,
+            "currency": "CLP",
+            "type": "Bill",
+            "displayOrder": 2
+        }
+    },
+    {
+        "model": "management.denomination",
+        "pk": 3,
+        "fields": {
+            "value": "5000",
+            "name": null,
+            "currency": "CLP",
+            "type": "Bill",
+            "displayOrder": 3
+        }
+    },
+    {
+        "model": "management.denomination",
+        "pk": 4,
+        "fields": {
+            "value": "2000",
+            "name": null,
+            "currency": "CLP",
+            "type": "Bill",
+            "displayOrder": 4
+        }
+    },
+    {
+        "model": "management.denomination",
+        "pk": 5,
+        "fields": {
+            "value": "1000",
+            "name": null,
+            "currency": "CLP",
+            "type": "Bill",
+            "displayOrder": 5
+        }
+    },
+    {
+        "model": "management.denomination",
+        "pk": 6,
+        "fields": {
+            "value": "500",
+            "name": null,
+            "currency": "CLP",
+            "type": "Coin",
+            "displayOrder": 1
+        }
+    },
+    {
+        "model": "management.denomination",
+        "pk": 7,
+        "fields": {
+            "value": "100",
+            "name": null,
+            "currency": "CLP",
+            "type": "Coin",
+            "displayOrder": 2
+        }
+    },
+    {
+        "model": "management.denomination",
+        "pk": 8,
+        "fields": {
+            "value": "50",
+            "name": null,
+            "currency": "CLP",
+            "type": "Coin",
+            "displayOrder": 3
+        }
+    },
+    {
+        "model": "management.denomination",
+        "pk": 9,
+        "fields": {
+            "value": "10",
+            "name": null,
+            "currency": "CLP",
+            "type": "Coin",
+            "displayOrder": 4
+        }
     }
 ]
