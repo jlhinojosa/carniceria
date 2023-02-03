@@ -1,9 +1,9 @@
 <!-- templates/registration/login.html -->
-{% extends 'base.html' %}
+{% extends 'content.html' %}
 
 {% block title %}Crear Local{% endblock %}
 
-{% block content %}
+{% block child %}
 <h2>Crear Caja</h2>
 <form method="post">
   {% csrf_token %}

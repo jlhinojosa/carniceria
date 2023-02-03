@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block menu %}
+{% include 'menu.html' %}
+{% endblock %}
+
+{% block content %}
+<main class="d-flex flex-nowrap container">  
+    <div class="content col-12">
+        <div class="container-fluid" style="padding-right: 0;">
+
+        {% block child %}
+        {% endblock%}
+
+        </div>
+    </div>
+</main>
+{% endblock %}

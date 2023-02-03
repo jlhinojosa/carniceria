@@ -1,0 +1,84 @@
+<!-- templates/registration/login.html -->
+{% extends 'content.html' %}
+
+{% block title %}Cierre de Caja{% endblock %}
+
+{% block child %}
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+<h2>Cierre de Caja</h2>
+<div class="content col-8">
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.non_field_errors }}
+    {{ form.field_errors }}
+    
+    <div class="container text-center">
+      <div class="row align-items-start">
+        <div class="col">
+
+        <div class="container text-center">
+          <div class="row align-items-start">
+            <div class="col">
+              Billetes
+            </div>
+          </div>
+          {% for field in form.get_bills %}
+          <div class="row align-items-start">
+            <div class="col">{{field.label}}</div>
+            <div class="col">
+              {{field}} {{field.errors}}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        </div>
+        <div class="col">
+    <div class="container text-center">
+      <div class="row align-items-start">
+        <div class="col">
+          Monedas
+        </div>
+      </div>
+      {% for field in form.get_coins %}
+      <div class="row align-items-start">
+        <div class="col">{{field.label}}</div>
+        <div class="col">
+          {{field}} {{field.errors}}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+      </div>
+    </div>
+
+    <table>
+        <tr>
+            <td>{{form.getnet.label}}</td>
+            <td>{{form.getnet}}</td>
+            <td>{{form.carnes.label}}</td>
+            <td>{{form.carnes}}</td>
+        </tr>
+    </table>
+  
+  <button type="submit">Realizar Cierre</button>
+</form>
+</div>
+{% endblock %}

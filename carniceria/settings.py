@@ -143,7 +143,8 @@ STATIC_ROOT = 'static'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = "/dashboard"
+LOGIN_URL = '/accounts/login'
+LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "home"  # new
 
 LANGUAGES = (
