@@ -17,9 +17,14 @@ def home(request):
 
 @login_required
 def dashboard(request):
-    venues = Venue.objects.filter(owner=request.user.id)
+
+    company = Company.objects.filter(manager=request.user.id).first()
+
+    venues = Venue.objects.filter(company_id=company.id)
 
     context = { 'venues' : venues }
+
+    print(request.user.company_set.all())
 
     return render(request, 'dashboard.html', context)
 

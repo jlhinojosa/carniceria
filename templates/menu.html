@@ -10,7 +10,16 @@
           </ul>
           <ul class="nav">
             {% if user.is_authenticated %}
-              <li class="nav-item"><a class="nav-link" href="#">Hi, {{user.username}}</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Hi, {{user.username}} 
+                {% if user.company_set.all.count > 1 %}
+                <select>
+                {% for company in user.company_set.all %}   
+                  <option>{{company.name}}</option>
+                {% endfor %}
+                </select>
+                {% else %}
+                {{user.company_set.first.name}}
+                {% endif %} </a></li>
               <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link link-dark px-2">Logout</a></li>
             {% else %}
               <li class="nav-item"><a href="{% url 'login' %}" class="nav-link link-dark px-2">Login</a></li>
