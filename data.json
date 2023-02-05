@@ -1,7 +1,7 @@
 [
     {
         "model": "auth.user",
-        "pk": 1,
+        "pk": -1,
         "fields": {
             "password": "pbkdf2_sha256$260000$zgDLsIfSRi0Qeq155JU2E8$01A7og6ptAYNDTVDU4cS+O618bs29eDcH9+eh1ZVbuU=",
             "last_login": null,
@@ -19,7 +19,7 @@
     },
     {
         "model": "auth.user",
-        "pk": 2,
+        "pk": -2,
         "fields": {
             "password": "pbkdf2_sha256$260000$CeNDFlIZvkj3JGPqC88Nam$1vhb6/GolMteeEDv9xby6HKkslepxfjxCFN2m6dU7rw=",
             "last_login": "2023-02-03T01:59:51.659Z",
@@ -132,6 +132,15 @@
             "currency": "CLP",
             "type": "Coin",
             "displayOrder": 4
+        }
+    },
+    {
+        "model": "management.company",
+        "pk": -1,
+        "fields": {
+            "name": "la asaderia",
+            "address": ".",
+            "manager": -2
         }
     }
 ]
